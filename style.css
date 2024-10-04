@@ -4,106 +4,80 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #e9e9e9;
-    transition: background-color 0.3s ease;
     height: 100vh;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/Vector 1.png"), url("images/Vector 2.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
-  ::selection {
-    background-color: #ffdc6a;
-    color: #252525;
-  }
-  
-  .logotype {
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Позволяет заголовку переноситься на новую строку при необходимости */
+}
+
+.logotype {
     padding: 15px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .logotype:hover {
-    opacity: 0.85;
-    cursor: pointer;
-  }
-  
-  .logotypetitle {
+}
+
+.logotypetitles {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам заголовка переноситься */
+}
+
+.logotypetitle {
     font-weight: normal;
     color: #e9e9e9;
-    transition: opacity 0.3s ease;
     margin: 0 15px;
-  }
-  
-  .logotypetitle:hover {
-    opacity: 0.9;
-    cursor: pointer;
-  }
-  
-  .maintitle {
+}
+
+.maintitle {
     font-weight: bold;
-    color: #e9e9e9;
     text-align: center;
     font-size: 36px;
     padding-top: 80px;
-    animation: fadeIn 1s ease;
-  }
-  
-  .secondtitle {
+}
+
+.secondtitle {
     font-weight: lighter;
     color: #cfcfcf;
     opacity: 0.7;
     text-align: center;
     font-size: 18px;
-    padding-top: 16px;
-    animation: fadeIn 1.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .gradient-button {
+}
+
+.gradient-button {
     display: block;
     width: fit-content;
     margin: 40px auto;
     padding: 14px 28px;
     font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #131313;
-    background-image: linear-gradient(to right, #ffca58, #dba228);
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .gradient-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .maintitle {
-      font-size: 28px;
-      padding-top: 50px;
+        font-size: 28px;
+        padding-top: 50px;
     }
-  
+
     .secondtitle {
-      font-size: 14px;
-      padding-top: 12px;
+        font-size: 14px;
+        padding-top: 12px;
     }
-  
+
     .gradient-button {
-      margin: 30px auto;
-      padding: 12px 24px;
-      font-size: 16px;
+        margin: 30px auto;
+        padding: 12px 24px;
+        font-size: 16px;
+        width: calc(100% - 40px); /* Кнопка занимает почти всю ширину экрана */
+        box-sizing: border-box; /* Учитывает отступы в ширине */
     }
-  }
+
+    .logotypetitles {
+        justify-content: center; /* Центрирует заголовки на мобильных устройствах */
+        margin-top: 10px; /* Добавляет отступ сверху для лучшего восприятия */
+        width: 100%; /* Задает ширину для логотипов */
+        text-align: center; /* Центрирует текст заголовков */
+        
+      }
+}
